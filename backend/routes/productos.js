@@ -11,7 +11,17 @@ router.post("/",async function(req, res){
         res.status(201).json({message: "Producto creado exitosamente"});
     } catch (error) {
         console.error("Error al crear el producto:", error);
-        res.status(400).json({message: "Error al crear el producto"});
+        res.status(404).json({message: "Error al crear el producto"});
     }
-})
+});
+
+//traer loa datos de la base de datos
+router.get("/", async (req, res) => {
+    try { 
+        const productos = await Productos.find();
+        res.json(productos);
+    } catch (error) {
+        res.status(500).json({message: "Error al obtener los productos"});
+    }
+}); 
 export default router;
