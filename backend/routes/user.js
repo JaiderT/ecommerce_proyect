@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
             return res.status(400).json({message: "Faltan datos obligatorios"});
         }
         //validar si el usuario ya existe
-        const existeuser = await user.find({email});
+        const existeuser = await user.findOne({email});
         if (existeuser) {
             return res.status(400).json({message: "El usuario ya existe"});
         }

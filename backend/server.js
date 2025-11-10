@@ -15,6 +15,6 @@ app.get('/', (req, res) => {
     res.send('Bienvenido al curso de node express');
 });
 app.use("/api/productos", ProductosRoutes)
-app.use("/api/users", userRoutes);
+app.use("/api/user", userRoutes);
 
 app.listen(8081, () => console.log('Servidor corriendo en http://localhost:8081') )
