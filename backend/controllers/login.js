@@ -16,16 +16,16 @@ export const loginusuario = async (req, res) => {
         }
         //comparamos la contraseña encriptada
         const passwordvalida = await bcrypt.compare(password, usuario.password)
-        if(passwordvalida){
+        if(!passwordvalida){
             return res.status(401).json({message:"contraseña incorrecta"});
         }
         //validamos inicio de sesion 
        res.status(200).json({message:"inicio exitoso",
-        usuario:{
-            id: usuario._id,
-            nombre: usuario.nombre,
-            telefono: usuario.telefono,
-            email: usuario.email
+            usuario:{
+                id: usuario._id,
+                nombre: usuario.nombre,
+                telefono: usuario.telefono,
+                email: usuario.email
         }
        }); 
     } catch (error) {
