@@ -11,7 +11,7 @@ async function cargarproductos() {
                  data-category ="laptops" 
                  data-price="${productos.precio}" 
                  data-product-Id="${productos.productId}">
-                 <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center overflow-hidden"
+                 <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center overflow-hidden">
                  <img src="${productos.image}" alt="${productos.nombre}" 
                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                  loading="lazy">

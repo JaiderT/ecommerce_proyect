@@ -3,83 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore Pro - Su tienda tecnologica online</title>
     <link rel="stylesheet" href="../style/output.css">
+    <title>Document</title>
 </head>
 <body class="bg-gray-50 font-sans">
-<header class="bg-white shadow-lg sticky top-0 z-50">
-    <nav class="container mx-auto px-4 py-4">
-        <div class="flex justify-between items-center">
-            <!--Logo-->
-            <div class="flex items-center">
-                <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg mr-3">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                    </svg>
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!--Logo-->
+                <div class="flex items-center">
+                    <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg mr-3">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"><a href="../pages/index.html">TechStore Pro</a></h1>
                 </div>
-                <h1 class="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"><a href="../pages/index.html">TechStore Pro</a></h1>
+                <!--menu-->
+                <div class="hidden md:flex space-x-6">
+                    <a href="../pages/index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Inicio<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600"></span></a>
+                    <a href="../pages/productos.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Productos<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
+                    <a href="../pages/categorias.html" class="text-gray-700  hover:text-blue-600 font-medium transition-colors duration-200 relative group">Categorías<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
+                    <a href="./contacto.html" class="text-gray-700  hover:text-blue-600 font-medium transition-colors duration-200 relative group">Contacto<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
+                </div>
+                <!--menu mejorado-->
+                <div class="flex items-center space-x-4">
+                    <!--Carrito-->
+                    <a href="#" class="cart-icon relative group p-2.5 hover:bglinear-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all duration-300 transform hover:scale-105"><svg class="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-all duration-300 group-hover:rotate-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5M7 13l-1.1 5m0 0h1.1m0-5v5m0 0h10m-10 0a2 2 0 104 0m6 0a2 2 0 100 4"/></svg><span id="cart-counter" class="cart-counter-pulse absolute -top-2 -right-2 bg-linear-to-r from-red-500 via-pink-500 to-red-600 text-white text-xs font-bold rounded-full min-w-5 h-5 fle items-center justify-center px-1 shadow-lg border-2 border-white" style="display:none;">0</span></a>
+                </div>
             </div>
-            <!--menu-->
-            <div class="hidden md:flex space-x-6">
-                <a href="../pages/index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Inicio<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600"></span></a>
-                <a href="../pages/productos.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Productos<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
-                <a href="../pages/categoria.html" class="text-gray-700  hover:text-blue-600 font-medium transition-colors duration-200 relative group">Categorías<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
-                <a href="./contacto.html" class="text-gray-700  hover:text-blue-600 font-medium transition-colors duration-200 relative group">Contacto<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
+        </nav>
+    </header>
+    <main>
+        
+        <h2 class="text-center text-3xl mt-12 font-bold mb-4">Laptops</h2>
+        <p class="text-gray-600 text-lg text-center -mt-3">Encontraras el portatil que necesites</p>
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto py-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Laptops">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://www.professionalwireless.com.co/wp-content/uploads/2024/04/ROG-Strix-18-G814JZR-G18.I94080_64GB.jpg" alt="Portatil Gamer ASUS ROG Strix 18" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                    <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">Portatil ASUS Gamer</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Portatil ASUS Gamer</h3>
+                    <p class="text-sm text-gray-600 mb-4">Core i9 14Th 2TB 64GB RTX 4080 2K</p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">17.900.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
             </div>
-            <!--menu mejorado-->
-            <div class="flex items-center space-x-4">
-                <!--Carrito-->
-                <a href="#" class="cart-icon relative group p-2.5 hover:bglinear-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all duration-300 transform hover:scale-105"><svg class="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-all duration-300 group-hover:rotate-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5M7 13l-1.1 5m0 0h1.1m0-5v5m0 0h10m-10 0a2 2 0 104 0m6 0a2 2 0 100 4"/></svg><span id="cart-counter" class="cart-counter-pulse absolute -top-2 -right-2 bg-linear-to-r from-red-500 via-pink-500 to-red-600 text-white text-xs font-bold rounded-full min-w-5 h-5 fle items-center justify-center px-1 shadow-lg border-2 border-white" style="display:none;">0</span></a>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Laptops">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://portatil.com.co/wp-content/uploads/2023/10/dell-gamer-g15-5530-15-1-portatil.com_.co_.jpg" alt="Portatil Gamer ASUS ROG Strix 18" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Portatil Dell Gamer</h3>
+                    <p class="text-sm text-gray-600 mb-4">G15 5530 15.6" CX28K</p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">7.350.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Laptops">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://digitalstore.com.co/wp-content/uploads/2020/05/Digital-Store-GF75-Thin-8RC-GTX-1050-4GB-GDDR5-centro-comercial-monterrey.jpeg" alt="Portatil Gamer ASUS ROG Strix 18" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Portatil Gamer MSI</h3>
+                    <p class="text-sm text-gray-600 mb-4">Intel Core i5 <br> Disco Duro 1TB <br> Memoria RAM DDR IV 8GB <br>Tarjeta Grafica GTX 1050 4GB
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">7.350.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-</header>
-<main>
-    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto py-8">
-        
-    </div>
-</main>
+        <h2 class="text-center text-3xl mt-12 font-bold mb-4">Celulares</h2>
+        <p class="text-gray-600 text-lg text-center -mt-3">Calidad y Rendimiento</p>
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto py-8">
+           <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Celulares">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://exitocol.vtexassets.com/arquivos/ids/27276682/iphone-16-128gb-ultramarino.jpg?v=638803261031700000" alt="" class="w- h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Iphone 16 Ultramarino</h3>
+                    <p class="text-sm text-gray-600 mb-4">128GB  Memoria RAM 8GB Procesador A18
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">3.290.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Celulares">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_713752-MLU77893818196_082024-F.web" alt="" class="w- h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Iphone 13 Pro Max</h3>
+                    <p class="text-sm text-gray-600 mb-4">256GB Memoria RAM 6GB Procesador A15 
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">2.835.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+             <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Celulares">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_899192-MLA95676724500_102025-F.web" alt="" class="w- h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Iphone 17 Naranja Cosmico</h3>
+                    <p class="text-sm text-gray-600 mb-4">256GB  Memoria RAM 8GB Procesador A19
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">3.290.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+         <h2 class="text-center text-3xl mt-12 font-bold mb-4">Componentes</h2>
+        <p class="text-gray-600 text-lg text-center -mt-3">Calidad Y Versatilidad</p>
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto py-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Componentes">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://resource.logitechg.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/gallery/g502x-plus-gallery-2-black.png?v=1" alt="" class="w- h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">G502 X PLUS</h3>
+                    <p class="text-sm text-gray-600 mb-4">Mause inalambrico para juegos LIGHTSPEED con LIGHTSYNC RGB
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">594.900</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Componentes">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://media.falabella.com/falabellaCO/143771563_01/w=1500,h=1500,fit=pad" alt="" class="w- h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Tarjeta MSI VENTUS GeForce RTX</h3>
+                    <p class="text-sm text-gray-600 mb-4">4060 8GB DDR6 2X
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">3.850.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 product-card" data-category="Componentes">
+                <div class="bg-linear-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                    <img src="https://media.falabella.com/falabellaCO/147841458_02/w=1500,h=1500,fit=pad" alt="" class="w- h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold mb-2 text-gray-800">Teclado Razer Huntsman Mini Switch Purple 60% Negro</h3>
+                    <p class="text-sm text-gray-600 mb-4">RGB Alambrico Gamer
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">350.000</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="ver-detalles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">Ver detalles</button>
+                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 <footer id="contacto" class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <div class="flex items-center mb-4">
-                    <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white p-2 rounded-lg mr-3">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h2z"/></svg>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white p-2 rounded-lg mr-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">TechStore Pro</h3>
                     </div>
-                    <h3 class="text-xl font-bold">TechStore Pro</h3>
+                    <p class="text-gray-400 mb-4">Tu tienda de tecnología de confianza con los mejores productos y precios.</p>
                 </div>
-                <p class="text-gray-400 mb-4">Tu tienda de tecnologia de confianza con los mejores productos y precios.</p>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="./index.html" class="hover:text-white transition-colors duration-200">Inicio</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Productos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Carrito</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Atención</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Envíos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Devoluciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Términos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Privacidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Cookies</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="../pages/index.html" class="hover:text-white transition-colors duration-200">Inicio</a></li>
-                    <li><a href="../pages/productos.html" class="hover:text-white transition-colors duration-200">Productos</a></li>
-                    <li><a href="carrito.html" class="hover:text-white transition-colors duration-200">Carrito</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold mb-4">Atencion</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Contacto</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Envios</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Devoluciones</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold mb-4">Legal</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Terminos</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Privacidad</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Cookies</a></li>
-                </ul>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 TechStore Pro. Todos los derechos reservados.</p>
             </div>
         </div>
-        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 TechStore Pro. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </html>

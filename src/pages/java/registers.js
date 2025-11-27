@@ -54,10 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             //recibir respuesta del servidor
             const resultado = await response.json();
-            
-            console.log('Respuesta del servidor:', response.status, resultado);
-
-            if (response.ok || response.status === 201) {
+            if (response.ok){
                 console.log('✅ Registro exitoso');
 
                 //guardar informacion
@@ -75,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 errorDiv.classList.remove('hidden');
 
                 //redirigir a login
-                setTimeout(() => window.location.href = 'login.html', 3000);
+                setTimeout(() => window.location.href = 'productos.html', 3000);
 
             } else {
                 //credenciales incorrectas o usuario ya existe
