@@ -1,0 +1,198 @@
+import bcrypt from "bcrypt";
+import nodemailer from "nodemailer"
+import user from "../models/user.js"
+
+const transporte = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user:'jaideralexandertotenabustamn@gmail.com',
+        pass:'iqzoqkvrjhlxmwdx'
+    }
+});
+//funcion de generar codigo de 6 digitos
+
+const generarcodigo = () =>{
+    return Math.floor(100000 + Math.random()*900000).toString();
+};
+//1. solicitar codigo de recuperacion
+export const solicitarcodigo = async (req, res) => {
+    try {
+        const{email} = req.body;
+        if(!email) {
+            return res.status(400).json({
+                message: "El correo electronico es obligatorio"
+            });
+        }
+        //buscar user
+        const usuario = await user.findOne({email});
+        if(!usuario){
+            return res.status(400).json({
+                message: "correo electronico no encontrado"
+            });
+        }
+        //Generar codigo de 6 digitos
+        const codigo = generarcodigo();
+        //guardar codigo con expiracion de 15 minutos
+        usuario.codigorecupercion=codigo;
+        usuario.codigoexpiracion=Date.now()+900000 //15minutos
+        await usuario.save();
+        //gmail de recuperacion
+        const mailoptions = {
+            from: 'jaideralexandertotenabustamn@gmail.com',
+            to: usuario.email,
+            subject: 'Codigo de Recuperacion - TechStore Pro',
+            html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h2 style="color: #4F46E5; margin: 0;">TechStore Pro</h2>
+                    </div>
+
+                    <h3 style="color: #333;">Recuperacion de Contraseña</h3>
+
+                    <p>Hola <strong>${usuario.nombre}</strong>,</p>
+
+                    <p>Recibimos una solicitud para restablecer tu contraseña.</p>
+
+                    <p>Tu codigo de Verificacion es:</p>
+
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #76aba2 100%);
+                                padding: 20px;
+                                border-radius: 10px;
+                                text-align: center;
+                                margin: 30px 0;">
+                        <h1 style="color: black
+                                    font-size: 36px;
+                                    letter-spacing: 8px;
+                                    margin: 0;
+                                    font-family: monospace;">
+                            ${codigo}
+                        </h1>   
+                    </div>
+
+                    <p style="color: #666; font-size: 14px;">
+                        ⏱️ Este codigo expirara en <strong>15 minutos</strong>.
+                    </p>
+
+                    <p style="color: #666; font-size: 14px;">
+                        🔒 Si no solicitaste este cambio, ignora este email y tu constraseña permanecerá segura.
+                    </p>
+
+                    <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;"></hr>
+
+                    <p style="color: #999; font-size: 12px; text-align: center;">
+                        ©️ 2025 TechStore Pro - Tu tienda de tecnologia de confianza 
+                    </p>
+                </div>
+            `
+        };
+        //Enviar email
+        await transporte.sendMail(mailoptions);
+
+        console.log(`Codigo enviado a ${usuario.email}:${codigo}`);
+
+        res.status(200).json({
+            message: "Si el correo existe, recibiras un codigo de verificacion",
+        });
+
+    } catch (error) {
+        console.error("Error al enviar codigo:", error);
+        res.status(500).json({
+            message: "Error al procesar la solicitud",
+            error: error.message
+        });   
+    }
+};
+//verificar codigo y cambiar contraseña
+export const cambiarpassword = async (req, res) => {
+    try {
+        const {email, codigo, nuevapassword} = req.body;
+
+        //validar
+        if (!email || !codigo || !nuevapassword){
+            return res.status(400).json({
+                message: "Todos los campos son obligatorios"
+            });
+        }
+        if (nuevapassword.length < 6) {
+            return res.status(400).json({
+                message:"La contraseña debe tener al menos 6 caracteres"
+            });
+        }
+        const usuario = await user.findOne({email});
+        if(!usuario){
+            return res.status(400).json({
+                message: "correo electronico no encontrado"
+            });
+        }
+        //encriptar nueva contraseña
+        const salt = await bcrypt.genSalt(10);
+        const hashedpassword = await bcrypt.hash(nuevapassword, salt);
+    
+        //Actualizar contraseña y limpiar codigo
+        usuario.password = hashedpassword;
+        usuario.codigorecupercion = undefined;
+        usuario.codigoexpiracion = undefined;
+        await usuario.save();
+
+        //Email de confirmacion
+        const mailoptions = {
+            from: 'jaideralexandertotenabustamn@gmail.com',
+            to: usuario.email,
+            subject: 'Contraseña Actualizada - TechStore Pro',
+            html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <div style="text-align: center; margin-bottom: 30px">
+                        <div style"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                    width: 60px;
+                                    height: 60px;
+                                    border.radius: 50%;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-bottom: 20px;">
+                            <span style="color:white; font-size: 30px;">✅</span>
+                        </div>
+                        <h2 style="color: #4F46E5; margin: 0%;">Contraseña Actualizada</h2>
+                    </div>
+
+                    <p>Hola <strong>${usuario.nombre}</strong>,</p>
+
+                    <p>Tu contraseña ha sido actualizada exitosamente.</p>
+
+                    <p>Ya puedes iniciar sesion con tu nueva contraseña.</p>
+
+                    <div style="text-align: center; margin: 30px 0;">
+                        <a href="http://127.0.0.1:5500/src/pages/login.html" 
+                                style="background: linear-gradient(to right, #4F46E5, #7C3AED);
+                                        color:white;
+                                        padding: 12px 30px;
+                                        text-decoration: none;
+                                        border-radius: 8px;
+                                        display: inline-block;">
+                                Iniciar Sesion
+                        </a>
+                    </div>
+
+                    <p style="color: #dc2626; font-size: 14px;">
+                        ⚠️ Si no realizaste este cambio. contacta a soporte inmediatamente.
+                    </p>
+
+                    <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+
+                    <p style="color: #999; font-size: 12px; text-align: center;">
+                        ©️ 2025 TechStore Pro - Tu tienda de tecnologia de confianza
+                    </p>
+                </div>
+            `
+        };
+        await transporte.sendMail(mailoptions);
+            res.status(200).json({
+                message: "Contraseña actualizada exitosamente"
+            });
+    } catch (error) { 
+        console.error("Error al cambiar contraseña:", error);
+        res.status(500).json({
+            message:"Error al cambiar la contraseña", error: error.message
+        });
+    }
+};

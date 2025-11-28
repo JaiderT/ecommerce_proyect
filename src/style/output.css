@@ -77,10 +77,8 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
-    --radius-4xl: 2rem;
     --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --animate-spin: spin 1s linear infinite;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -275,6 +273,9 @@
   .top-5 {
     top: calc(var(--spacing) * 5);
   }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
   .-right-2 {
     right: calc(var(--spacing) * -2);
   }
@@ -359,8 +360,8 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
+  .mt-40 {
+    margin-top: calc(var(--spacing) * 40);
   }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
@@ -430,11 +431,21 @@
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
   }
+  .size-8 {
+    width: calc(var(--spacing) * 8);
+    height: calc(var(--spacing) * 8);
+  }
   .h-0 {
     height: calc(var(--spacing) * 0);
   }
   .h-0\.5 {
     height: calc(var(--spacing) * 0.5);
+  }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+  .h-1\.5 {
+    height: calc(var(--spacing) * 1.5);
   }
   .h-4 {
     height: calc(var(--spacing) * 4);
@@ -454,11 +465,8 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
-  .h-24 {
-    height: calc(var(--spacing) * 24);
-  }
-  .h-32 {
-    height: calc(var(--spacing) * 32);
+  .h-20 {
+    height: calc(var(--spacing) * 20);
   }
   .h-48 {
     height: calc(var(--spacing) * 48);
@@ -490,11 +498,8 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
-  .w-24 {
-    width: calc(var(--spacing) * 24);
-  }
-  .w-32 {
-    width: calc(var(--spacing) * 32);
+  .w-20 {
+    width: calc(var(--spacing) * 20);
   }
   .w-60 {
     width: calc(var(--spacing) * 60);
@@ -510,9 +515,6 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
-  }
-  .max-w-full {
-    max-width: 100%;
   }
   .max-w-md {
     max-width: var(--container-md);
@@ -552,8 +554,8 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
-  .animate-spin {
-    animation: var(--animate-spin);
+  .cursor-not-allowed {
+    cursor: not-allowed;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -664,6 +666,13 @@
       margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .space-x-8 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 8) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -729,14 +738,17 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
   .bg-blue-600 {
     background-color: var(--color-blue-600);
   }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
-  .bg-gray-600 {
-    background-color: var(--color-gray-600);
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
   }
   .bg-gray-800 {
     background-color: var(--color-gray-800);
@@ -758,6 +770,9 @@
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -869,6 +884,9 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-14 {
+    padding-inline: calc(var(--spacing) * 14);
+  }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -962,9 +980,6 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-blue-100 {
-    color: var(--color-blue-100);
-  }
   .text-blue-600 {
     color: var(--color-blue-600);
   }
@@ -1026,12 +1041,6 @@
   }
   .opacity-10 {
     opacity: 10%;
-  }
-  .opacity-25 {
-    opacity: 25%;
-  }
-  .opacity-75 {
-    opacity: 75%;
   }
   .opacity-90 {
     opacity: 90%;
@@ -1683,11 +1692,6 @@
 @property --tw-ease {
   syntax: "*";
   inherits: false;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {

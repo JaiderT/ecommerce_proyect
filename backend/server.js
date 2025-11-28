@@ -5,6 +5,7 @@ import ProductosRoutes from './routes/productos.js'
 import userRoutes from './routes/user.js';
 import { loginusuario } from './controllers/login.js';
 import perfilRouter from './routes/perfil.js';
+import recuperarpassword from './routes/recuperar.js';
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.use("/api/productos", ProductosRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/login", loginusuario);
 app.use("/api/perfil", perfilRouter);
+app.use('/api/recuperar', recuperarpassword);
 
 app.listen(8081, () => console.log('Servidor corriendo en http://localhost:8081') )

@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
         console.error("error al obtener el perfi", err);
 
         //cerrar sesion fallida
-
         localStorage.clear();
         window.location.href="../pages/login.html";
         return;

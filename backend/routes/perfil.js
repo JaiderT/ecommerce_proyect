@@ -1,8 +1,10 @@
 import express from "express"
-import { obtenerperfil } from "../controllers/perfil.js";
+import { obtenerperfil, perfilactualizado, perfildelete} from "../controllers/perfil.js";
 
 const router = express.Router();
 
 router.post('/obtener',obtenerperfil);
+router.put('/actualizar', perfilactualizado);
+router.delete('/eliminar', perfildelete)
 
 export default router;
