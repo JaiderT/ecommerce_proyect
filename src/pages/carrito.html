@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/output.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!--Logo-->
+                <div class="flex items-center">
+                    <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg mr-3">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"><a href="../pages/index.html">TechStore Pro</a></h1>
+                </div>
+                <!--menu-->
+                <div class="hidden md:flex space-x-6">
+                    <a href="./index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Inicio<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
+                    <a href="../pages/productos.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Productos<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span></a>
+                    <a href="./carrito.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">Carrito<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600"></span></a>
+                </div>
+                <!--menu mejorado-->
+                <div class="flex items-center space-x-4">
+                    <!--Carrito-->
+                    <a href="#" class="cart-icon relative group p-2.5 hover:bglinear-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all duration-300 transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-blue-700">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                        <span class="hidden">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="w-full flex justify-between mt-10 px-50">
+            <!-- IZQUIERDA - TÍTULO -->
+            <div>
+                <h1 class="text-4xl font-semibold flex items-center gap-2">
+                    <span class="text-blue-600 text-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    </span>Tu Carrito</h1>
+                <p class="text-gray-500 mt-1">Revisa tus productos antes de finalizar la compra</p>
+            </div>
+            <!-- DERECHA - CONTENEDOR DEL RESUMEN -->
+            <div class="w-[380px] bg-white shadow-xl rounded-2xl p-6">
+                <h2 class="text-xl font-semibold flex items-center gap-2">
+                    <span class="text-blue-600 text-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
+                        </svg>
+                        </span> Resumen del Pedido
+                </h2>
+                <div class="mt-4">
+                    <div class="flex justify-between py-1">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span class="font-medium">$0</span>
+                    </div>
+                    <div class="flex justify-between py-1">
+                        <span class="text-gray-600">Envío</span>
+                        <span class="text-green-600 font-semibold">Gratis</span>
+                    </div>
+                </div>
+                <div class="mt-4 bg-gray-100 rounded-xl p-3 flex justify-between font-bold">
+                    <span>Total</span>
+                    <span class="text-blue-600">$0</span>
+                </div>
+                <hr class="my-4">
+                <!-- Información de envío -->
+                <h3 class="font-semibold mb-2 flex items-center gap-2">
+                    <span class="text-blue-600">📍</span> Información de Envío
+                </h3>
+                <input type="text" placeholder="Ej: Calle 123 #45-67"
+                    class="w-full border border-gray-300 rounded-lg p-3">
+                <div class="flex gap-3 mt-3">
+                    <input class="w-1/2 border border-gray-300 rounded-lg p-3" placeholder="Bogotá">
+                    <input class="w-1/2 border border-gray-300 rounded-lg p-3" placeholder="110111">
+                </div>
+                <select class="w-full border border-gray-300 rounded-lg p-3 mt-3">
+                    <option>Efectivo contra entrega</option>
+                    <option>Tarjeta De Credito/Debito</option>
+                    <option>Efecty</option>
+                    <option>PSE</option>
+                </select>
+                <!-- Botón -->
+                <button
+                    class="w-full mt-5 py-3 rounded-xl text-white font-semibold bg-linear-to-r from-blue-600 to-purple-500">
+                    ✓ Finalizar Compra
+                </button>
+                <ul class="mt-5 text-gray-700 space-y-1 text-sm">
+                    <li>✓ Compra segura y protegida</li>
+                    <li>✓ Envío gratis en compras +$100.000</li>
+                    <li>✓ Soporte 24/7</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

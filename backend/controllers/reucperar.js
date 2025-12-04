@@ -5,8 +5,8 @@ import user from "../models/user.js"
 const transporte = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user:'jaideralexandertotenabustamn@gmail.com',
-        pass:'iqzoqkvrjhlxmwdx'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 //funcion de generar codigo de 6 digitos
