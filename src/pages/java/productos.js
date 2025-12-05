@@ -2,7 +2,7 @@
 
 async function cargarproductos() {
     try {
-        const response = await fetch('http://localhost:8081/api/productos');
+        const response = await fetch('https://ecommerce-proyect-kul6.onrender.com/api/productos');
         const productos = await response.json();
 
         const grid = document.getElementById('products-grid');

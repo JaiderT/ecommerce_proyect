@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log('✅Pagina cargada correcta - Sistema listo');
 
     //creamos la constante de la Api
-    const API_URL = "http://localhost:8081/api/user/register";
+    const API_URL = "https://ecommerce-proyect-kul6.onrender.com/api/user/register";
 
     //Enviar los datos del formulario
     document.getElementById('register-form').addEventListener('submit', async function (e) {

@@ -22,7 +22,7 @@ export const crearpedido = async (req, res) => {
 export const obtenerpedido = async(req, res) => {
     try {
         const pedido = await Pedido.find();
-        res.json(Pedido);
+        res.json(pedido);
     } catch (error) {
         res.status(500).json({
             message: "Error al obtener los productos"

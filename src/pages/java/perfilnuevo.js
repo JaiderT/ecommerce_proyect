@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Obtener perfil
     try {
-        const res = await fetch("http://localhost:8081/api/perfil/obtener", {
+        const res = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/perfil/obtener", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: perfil.email })
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!confirm("¿Guardar cambios?")) return;
 
         try {
-            const res = await fetch("http://localhost:8081/api/perfil/actualizar", {
+            const res = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/perfil/actualizar", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: perfil.email, nombre, telefono })
