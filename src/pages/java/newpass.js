@@ -6,6 +6,8 @@ if (!email) {
     window.location.href = "./recuperar.html";
 }
 
+    const API_URL = "https://ecommerce-proyect-kul6.onrender.com/api/Recuperar/cambiar-password";
+
 document.getElementById("newpass-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -32,7 +34,7 @@ document.getElementById("newpass-form").addEventListener("submit", async (e) => 
     btn.textContent = 'Actualizando Contraseña...';
 
     try {
-        const response = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/Recuperar/cambiar-password", {
+        const response = await fetch (API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

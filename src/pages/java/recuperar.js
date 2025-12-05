@@ -1,6 +1,8 @@
 document.getElementById("recuperar-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const API_URL = "https://ecommerce-proyect-kul6.onrender.com/api/Recuperar/solicitar-codigo";
+
     const email = document.getElementById("email").value.trim();
     const errorEmail = document.getElementById("email-error");
     const btn = document.getElementById('recupera-btn');
@@ -12,7 +14,7 @@ document.getElementById("recuperar-form").addEventListener("submit", async (e) =
     btn.textContent = 'Enviando Codigo...';
 
     try {
-        const response = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/Recuperar/solicitar-codigo", {
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
