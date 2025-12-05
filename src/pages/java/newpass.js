@@ -34,7 +34,7 @@ document.getElementById("newpass-form").addEventListener("submit", async (e) => 
     btn.textContent = 'Actualizando Contraseña...';
 
     try {
-        const response = await fetch (API_URL, {
+        const response = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/Recuperar/cambiar-password", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

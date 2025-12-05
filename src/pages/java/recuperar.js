@@ -14,7 +14,7 @@ document.getElementById("recuperar-form").addEventListener("submit", async (e) =
     btn.textContent = 'Enviando Codigo...';
 
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/Recuperar/solicitar-codigo", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
