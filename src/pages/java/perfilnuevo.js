@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!nombre || !telefono) {
             mostrarToast("Por favor completa todos los campos", "error");
             return;
-        }
-        if (!confirm("¿Guardar cambios?")) return;
+        };
+        
 
         try {
             const res = await fetch("https://ecommerce-proyect-kul6.onrender.com/api/perfil/actualizar", {
