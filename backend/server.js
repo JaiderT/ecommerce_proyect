@@ -25,4 +25,4 @@ app.use("/api/perfil", perfilRouter);
 app.use('/api/recuperar', recuperarpassword);
 app.use("/api/pedido", pedidoRoutes)
 
-app.listen(8081, () => console.log('Servidor corriendo en http://localhost:8081') )
+app.listen(8081, () => console.log('Servidor corriendo en https://ecommerce-proyect-kul6.onrender.com') )
